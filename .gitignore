@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+*.egg-info/
+
+# HuggingFace model cache
+.cache/
+~/.cache/
+
+# Large model files
+*.bin
+*.safetensors
+*.gguf
+
+# Raw benchmark data (optional - keep small ones if you want)
+data/raw/*.json
+
+# macOS
+.DS_Store
+.ipynb_checkpoints/
