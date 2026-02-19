@@ -122,7 +122,46 @@ This highlights favorable hardware–software co-design behavior on Apple Silico
 - Quantization: 4-bit
 - Local inference (no cloud)
 - Single prompt test
+---
+## Summary of Results
 
+| Model | Avg Tokens/sec | Avg Power (mW) | Energy per Token (mW/token) | Avg Memory (GB) |
+|-------|---------------|---------------|-----------------------------|-----------------|
+| 1B    | 37.95        | ~XX           | ~XX                         | 0.72            |
+| 3B    | 20.6         | ~72           | ~3.5                        | 8.8             |
+| 7B    | 9.1          | ~105          | ~11.6                       | 9.85            |
+---------------------------------------------------------------------------------------
+
+## Throughput Scaling Analysis
+
+Log–log regression of throughput vs parameter count yields:
+
+α ≈ 0.725
+
+Throughput ∝ (Parameter Count)^(-α)
+
+This indicates sub-linear scaling behavior, suggesting inference is partially memory-bandwidth constrained rather than purely compute-bound.
+
+Deviation from ideal linear inverse scaling highlights:
+
+- Unified memory arbitration
+- Cache hierarchy pressure
+- Increasing activation footprint
+
+---
+## Visualizations
+
+### Log-Log Throughput Scaling
+![Scaling Curve](results/charts/log_scaling_1B_3B_7B.png)
+
+### Throughput vs Power Operating Regimes
+![Throughput vs Power](results/charts/throughput_vs_power.png)
+
+### Sustained 7B Stability
+![7B Stability](results/charts/7B_sustained_throughput.png)
+
+### Unified Memory Scaling
+![Memory Scaling](results/charts/memory_scaling.png)
 
 ---
 
