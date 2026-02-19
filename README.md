@@ -203,7 +203,30 @@ Future experiments may include:
 • Performance-per-watt degrades non-linearly with model scale
 
 ---
+## Statistical Summary (3B vs 7B)
 
+### 3B Model
+- Average Throughput: 20.6 tokens/sec
+- Average Combined Power: 72 mW
+- Energy per Token: 3.5 mW/token
+- Average Memory Used: 8.8 GB
+- Sustained Thermal Pressure: Nominal
+
+### 7B Model
+- Average Throughput: 9.1 tokens/sec
+- Average Combined Power: 105 mW
+- Energy per Token: 11.6 mW/token
+- Average Memory Used: 9.8 GB
+- Sustained Thermal Pressure: Nominal
+
+### Efficiency Comparison
+
+- 7B consumes ~3.3x more energy per token than 3B.
+- Throughput drops ~2.2x when scaling from 3B to 7B.
+- Memory increases modestly (~1 GB increase) despite parameter scaling.
+- Thermal stability remained Nominal in all sustained tests.
+
+---
 
 ## Repository Structure
 ```
