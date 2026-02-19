@@ -194,6 +194,16 @@ Future experiments may include:
 - ANE (Neural Engine) acceleration study
 
 ---
+## Key Findings
+
+• 7B models reduce throughput by ~2.3x compared to 3B
+• Energy cost per token increases ~3.3x
+• Unified memory allows both models to run without swap
+• No sustained thermal throttling observed over 30-minute stress test
+• Performance-per-watt degrades non-linearly with model scale
+
+---
+
 
 ## Repository Structure
 ```
@@ -213,3 +223,6 @@ m3-ai-research/
 
 Shaun Jerome
 Independent Systems & AI Research
+
+
+
