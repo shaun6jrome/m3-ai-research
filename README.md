@@ -81,6 +81,34 @@ Performance:
 - Peak memory: 0.717 GB
 - Tokens generated: 102
 
+## Memory Scaling
+
+Peak memory usage increases approximately linearly with model size.
+
+However, throughput degradation is sub-linear, indicating effective utilization
+of unified memory bandwidth and cache hierarchy.
+
+## Empirical Scaling Law
+
+We fit a log–log regression across 1B, 3B, and 7B models:
+
+Throughput ∝ N^-α
+
+Estimated exponent:
+
+α ≈ 0.725
+
+Interpretation:
+
+• Scaling is sub-linear relative to naive inverse parameter growth
+• Throughput degrades slower than 1/N
+• Indicates effective memory hierarchy utilization
+• Suggests unified memory reduces scaling penalties
+• Demonstrates efficient kernel scheduling in MLX
+
+This highlights favorable hardware–software co-design behavior on Apple Silicon.
+
+
 ## Methodology
 
 - Framework: Apple MLX
