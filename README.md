@@ -164,6 +164,8 @@ The modest increase in memory usage from 3B to 7B highlights:
 
 Unified memory appears well-suited for medium-scale transformer inference.
 
+
+
 ---
 
 ## Conclusion
@@ -180,6 +182,54 @@ Key findings:
 
 These results highlight the strength of Apple’s hardware–software co-design philosophy for on-device AI workloads.
 
+---
+
+---
+
+## Architectural Discussion
+
+### Unified Memory Advantage
+
+Apple’s unified memory architecture eliminates discrete CPU–GPU memory duplication.
+
+For transformer inference workloads:
+
+- Model weights are shared across compute units  
+- No PCIe transfer overhead  
+- Reduced memory bandwidth bottlenecks  
+- Improved energy efficiency per token  
+
+This directly contributes to the stable scaling behavior observed between 3B and 7B models.
+
+---
+
+### Fanless Thermal Envelope Stability
+
+The MacBook Air M3 is a fanless system.
+
+Despite sustained 7B inference:
+
+- Thermal pressure remained Nominal  
+- No observable throughput degradation  
+- Power fluctuations did not cause throttling  
+
+This demonstrates effective dynamic frequency scaling and significant thermal headroom within Apple Silicon’s efficiency-oriented architecture.
+
+---
+
+### Silicon-Level Tradeoffs
+
+Observations:
+
+- Throughput scales sub-linearly with parameter size  
+- Energy cost scales super-linearly  
+- Memory usage increases modestly relative to model size  
+
+Implication:
+
+Apple Silicon’s architectural design favors moderate transformer scales (≤3B parameters) for optimal performance-per-watt under consumer thermal envelopes.
+
+While 7B models remain thermally stable, they incur significantly higher energy cost per token compared to 3B models.
 ---
 
 ## Future Work
