@@ -62,7 +62,14 @@ The goal is to study hardware–software co-design implications of consumer-grad
 - Sustained performance stability# Apple Silicon M3 AI Research
 
 Benchmarking on-device LLM inference performance on MacBook Air M3 (16GB).
+- - -
+## Limitations
 
+- Single hardware platform (M3 Air only)
+- Single quantization level (4-bit)
+- No cross-platform comparison (e.g., x86 + RTX)
+- Limited parameter range (1B–7B)
+---
 ## Hardware
 
 - Device: MacBook Air M3 (2024)
