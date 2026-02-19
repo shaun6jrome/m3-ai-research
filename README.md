@@ -28,7 +28,3 @@ Performance:
 - Single prompt test
 
 ## Project Structure
-pwd
-git add README.md
-git commit -m "Add README with 1B benchmark results"
-git push
